@@ -23,8 +23,7 @@ int fatorial(int num){
 }
 
 int num_combinacoes(int N, int K){
-	int formula = fatorial(N) / (fatorial(K) * (fatorial(N - K)));
-	return formula;
+	return fatorial(N) / (fatorial(K) * (fatorial(N - K)));
 }
 
 TEST_CASE("Testando o fatorial")
