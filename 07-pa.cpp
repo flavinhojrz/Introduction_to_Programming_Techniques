@@ -8,7 +8,13 @@
  */
 
 bool eh_PA(int tamanho, int sequencia[], int &razao) {
-  return false;
+	razao = sequencia[1] - sequencia[0]; 
+	for(int i = 2; i < tamanho; i++) {
+		if(sequencia[i] - sequencia[i - 1] != razao) {
+			return false;
+		}
+	}
+	return true; 
 }
 
 TEST_CASE("Testando uma sequência que é uma PA.") {
