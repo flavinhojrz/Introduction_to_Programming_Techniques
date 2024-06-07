@@ -18,7 +18,6 @@ bool esta_ordenado(int tamanho, int sequencia[]) {
 	return true; 
 }
 
-
 TEST_CASE("Testando uma sequência ordenada.") {
   int seq[] = { 6, 9, 11, 34, 56, 77, 91, 101 };
   CHECK(esta_ordenado(8, seq) == true);

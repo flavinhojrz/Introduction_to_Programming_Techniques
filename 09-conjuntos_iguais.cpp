@@ -8,6 +8,25 @@
  * são armazenados.
  */
 
+bool iguais(int seq1[], int tamanho1, int seq2[], int tamanho2){
+	if(tamanho1 != tamanho2){
+		return false;
+	}
+	for(int i = 0; i < tamanho1; i++){
+		bool found = false;
+
+		for(int j = 0; j < tamanho2; j++){
+			if(seq1[i] == seq2[j]){
+				found = true;
+			}
+		}
+		if(!found){
+			return false;
+		}
+	}
+	return true;
+}
+
 
 TEST_CASE("Testando com dois conjuntos iguais na mesma ordem.") {
   int seq1[] = { 7, 1, 4, 2, 3 };

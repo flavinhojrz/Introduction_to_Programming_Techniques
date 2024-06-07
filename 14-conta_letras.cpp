@@ -13,6 +13,21 @@
  * acentuadas etc.).
  */
 
+#include <iostream>
+#include <sstream>
+#include <string>
+using namespace std;
+
+int conta_caractere(string str, char caracter){
+	int contador = 0;
+	for (int i = 0; i < str.size(); i++) {
+		str[i] = tolower(str[i]);
+    if(str[i] == tolower(caracter)){
+			contador++;
+		}
+  }
+  return contador;
+}
 
 
 TEST_CASE("Testando com uma string qualquer.") {
