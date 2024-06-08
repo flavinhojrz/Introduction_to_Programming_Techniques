@@ -28,6 +28,7 @@ bool iguais(int seq1[], int tamanho1, int seq2[], int tamanho2){
 }
 
 
+
 TEST_CASE("Testando com dois conjuntos iguais na mesma ordem.") {
   int seq1[] = { 7, 1, 4, 2, 3 };
   int seq2[] = { 7, 1, 4, 2, 3 };

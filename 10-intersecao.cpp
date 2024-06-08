@@ -18,6 +18,8 @@
  * conjunto com a interseção calculada é igual ao conjunto com a interseção esperada.
  */
 
+
+
 TEST_CASE("Testando com duas sequências sem repetições.") {
   int seq1[]  = { 7, 1, 4, 2, 3 };
   int seq2[]  = { 8, 4, 2, 1, 6, 9, 0 };

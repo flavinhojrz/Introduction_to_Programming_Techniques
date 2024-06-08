@@ -10,6 +10,22 @@
  * deve retornar uma nova string com os espaços em branco iniciais e finais removidos.
  */
 
+std::string trim(const std::string& str) {
+	int inicio = 0;
+	int fim = str.length() - 1;
+
+	while(inicio <= fim && str[inicio] == ' ') {
+		++inicio;
+	}
+
+	while(fim >= inicio && str[fim] == ' ') {
+		--fim;
+	}
+
+	return str.substr(inicio, fim - inicio + 1);
+}
+
+
 
 TEST_CASE("Testando com uma string sem espaço em branco.") {
   std::string str = "Amou daquela vez como se fosse a ultima";
@@ -22,11 +38,11 @@ TEST_CASE("Testando com uma string com espaço em branco no início.") {
 }
 
 TEST_CASE("Testando com uma string com espaço em branco no final.") {
-  std::string str = "E cada filho seu como se fosse o unico";
-  CHECK(trim(str) == "E cada filho seu como se fosse o unico    ");
+  std::string str = "E cada filho seu como se fosse o unico    ";
+  CHECK(trim(str) == "E cada filho seu como se fosse o unico");
 }
 
 TEST_CASE("Testando com uma string com espaço em branco em ambos os lados.") {
-  std::string str = "E atravessou a rua com seu passo timido";
-  CHECK(trim(str) == "     E atravessou a rua com seu passo timido        ");
+  std::string str = "     E atravessou a rua com seu passo timido        ";
+  CHECK(trim(str) == "E atravessou a rua com seu passo timido");
 }
