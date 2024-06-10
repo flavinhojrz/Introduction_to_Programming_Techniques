@@ -22,10 +22,6 @@
 
 const int TAM_MAX = 20;
 
-bool multiplica(){
-
-}
-
 
 TEST_CASE("Testando com matrizes quadradas.") {
   int a[TAM_MAX][TAM_MAX] = {

@@ -24,13 +24,23 @@ void intersecao(int seq1[], int tam1, int seq2[], int tam2, int calculada[], int
     int verificador = seq1[i];
     for(int j = 0; j < tam2; j++){
       if(verificador == seq2[j]){
-        calculada[tam] = verificador;
-        tam++;
+        bool jaExiste = false;
+        for(int k = 0; k < tam; k++){
+          if(verificador == calculada[k]){
+            jaExiste = true;
+            break;
+          }
+        }
+        if(!jaExiste){
+          calculada[tam] = verificador;
+          tam++;
+        }
         break;
       }
     }
   }
 }
+
 
 bool iguais(int seq1[], int tamanho1, int seq2[], int tamanho2){
 	if(tamanho1 != tamanho2){
