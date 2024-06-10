@@ -20,67 +20,72 @@
  * resultante da multiplicação é igual à matriz esperada.
  */
 
+const int TAM_MAX = 20;
+
+bool multiplica(){
+
+}
 
 
 TEST_CASE("Testando com matrizes quadradas.") {
-  int a[3][3] = {
+  int a[TAM_MAX][TAM_MAX] = {
     { 7, 1, 4 },
     { 1, 2, 1 },
     { 4, 1, 7 }
   };
-  int b[3][3] = {
+  int b[TAM_MAX][TAM_MAX] = {
     { 1, 4, 2 },
     { 2, 1, 9 },
     { 1, 7, 0 }
   };
-  int esperada[3][3] = {
+  int esperada[TAM_MAX][TAM_MAX] = {
     { 13, 50, 23 },
     {  6, 14, 20 },
     { 14, 56, 17 }
   };
-  int calculada[20][20];
+  int calculada[TAM_MAX][TAM_MAX];
   int lin, col;
   CHECK(multiplica(a, 3, 3, b, 3, 3, calculada, lin, col) == true);
   CHECK(eh_igual(esperada, 3, 3, calculada, lin, col) == true);
 }
 
 TEST_CASE("Testando com matrizes quaisquer, sendo possível calcular a matriz.") {
-  int a[3][5] = {
+  int a[TAM_MAX][TAM_MAX] = {
     { 7, 1, 4, -1, -2 },
     { 1, 2, 1,  0,  3 },
     { 4, 1, 7, -2,  1 }
   };
-  int b[5][3] = {
+  int b[TAM_MAX][TAM_MAX] = {
     { 1,  4 },
     { 2,  1 },
     { 1,  7 },
     { 7,  0 },
     { 2, -2 }
   };
-  int esperada[3][2] = {
+  int esperada[TAM_MAX][TAM_MAX] = {
     {  4, 61 },
     { 12,  7 },
     {  1, 64 }
   };
-  int calculada[20][20];
+  int calculada[TAM_MAX][TAM_MAX];
   int lin, col;
   CHECK(multiplica(a, 3, 5, b, 5, 3, calculada, lin, col) == true);
   CHECK(eh_igual(esperada, 3, 2, calculada, lin, col) == true);
 }
 
 TEST_CASE("Testando com matrizes quaisquer, não sendo possível calcular a matriz.") {
-  int a[3][5] = {
+  int a[TAM_MAX][TAM_MAX] = {
     { 7, 1, 4, -1, -2 },
     { 1, 2, 1,  0,  3 },
     { 4, 1, 7, -2,  1 }
   };
-  int b[4][3] = {
+  int b[TAM_MAX][TAM_MAX] = {
     { 1,  4 },
     { 2,  1 },
     { 7,  0 },
     { 2, -2 }
   };
-  int calculada[20][20];
+  int calculada[TAM_MAX][TAM_MAX];
   int lin, col;
   CHECK(multiplica(a, 3, 5, b, 5, 3, calculada, lin, col) == false);
 }

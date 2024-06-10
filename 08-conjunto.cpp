@@ -47,6 +47,19 @@ TEST_CASE("Testando uma sequência com repetições.")
   CHECK(seq[4] == 3);
 }
 
+TEST_CASE("Testando uma sequência com repetições.")
+{
+  int seq[] = {2,2,4,6,4,8,6,10,8};
+  int tam = 9;
+  conjunto(tam, seq);
+  CHECK(tam == 5);
+  CHECK(seq[0] == 2);
+  CHECK(seq[1] == 4);
+  CHECK(seq[2] == 6);
+  CHECK(seq[3] == 8);
+  CHECK(seq[4] == 10);
+}
+
 TEST_CASE("Testando uma sequência sem repetições.")
 {
   int seq[] = {0, 9, -1, 7, 1, 4};

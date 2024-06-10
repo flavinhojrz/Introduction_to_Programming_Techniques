@@ -18,6 +18,40 @@
  * conjunto com a interseção calculada é igual ao conjunto com a interseção esperada.
  */
 
+void intersecao(int seq1[], int tam1, int seq2[], int tam2, int calculada[], int &tam){
+  tam = 0;
+  for(int i = 0; i < tam1; i++){
+    int verificador = seq1[i];
+    for(int j = 0; j < tam2; j++){
+      if(verificador == seq2[j]){
+        calculada[tam] = verificador;
+        tam++;
+        break;
+      }
+    }
+  }
+}
+
+bool iguais(int seq1[], int tamanho1, int seq2[], int tamanho2){
+	if(tamanho1 != tamanho2){
+		return false;
+	}
+	for(int i = 0; i < tamanho1; i++){
+		bool found = false;
+
+		for(int j = 0; j < tamanho2; j++){
+			if(seq1[i] == seq2[j]){
+				found = true;
+			}
+		}
+		if(!found){
+			return false;
+		}
+	}
+	return true;
+}
+
+
 
 
 TEST_CASE("Testando com duas sequências sem repetições.") {

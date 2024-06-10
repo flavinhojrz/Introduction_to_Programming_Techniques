@@ -10,6 +10,24 @@
  * se todos os elementos forem iguais ou falso caso contrário.
  */
 
+#include <stdbool.h>
+
+bool eh_igual(int a[][4], int a_rows, int a_cols, int b[][4], int b_rows, int b_cols) {
+  if (a_rows != b_rows || a_cols != b_cols) {
+    return false;
+  }
+
+  for (int i = 0; i < a_rows; ++i) {
+    for (int j = 0; j < a_cols; ++j) {
+      if (a[i][j] != b[i][j]) {
+        return false;
+      }
+    }
+  }
+
+  return true;
+}
+
 
 
 TEST_CASE("Testando matrizes com as mesmas dimensões.") {
