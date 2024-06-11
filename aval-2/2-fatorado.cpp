@@ -29,19 +29,38 @@
  * Obs 2: Não utilize nenhuma função de bibliotecas (por exemplo, pow() da <cmath>).
  */
 
+int power(int b, int n) {
+	if (n == 0) {
+		return 1;
+	} else {
+		return b * power(b, n - 1);
+	}
+}
 
-int fatorado(int num, int base[], int expo[]) {
+int fatorado(int num, int base[], int expo[]){
 	int resultado = 1;
 	for (int i = 0; i < num; i++) {
 		if (base[i] == 0 && expo[i] != 0) {
 			return 0; 
 		}
-		for(int j = 0; j < expo[i]; j++){
-			resultado *= base[i];
-		}
+		resultado *= power(base[i], expo[i]);
 	}
 	return resultado;
 }
+
+
+// int fatorado(int num, int base[], int expo[]) {
+// 	int resultado = 1;
+// 	for (int i = 0; i < num; i++) {
+// 		if (base[i] == 0 && expo[i] != 0) {
+// 			return 0; 
+// 		}
+// 		for(int j = 0; j < expo[i]; j++){
+// 			resultado *= base[i];
+// 		}
+// 	}
+// 	return resultado;
+// }
 
 TEST_CASE("Testando a função com valores quaisquer.") {
   int base[] = { 2, 7 };
